@@ -1,0 +1,3 @@
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS'
+export const SHOW_LOADER = 'SHOW_LOADER'
+export const HIDE_LOADER = 'HIDE_LOADER'

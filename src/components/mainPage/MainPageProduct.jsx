@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function MainPageProduct() {
-   return <div></div>
+export function MainPageProduct({ product }) {
+return <div>{ product.id }</div>
 }

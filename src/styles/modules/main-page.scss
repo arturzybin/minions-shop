@@ -1,0 +1,13 @@
+@import '../mixins';
+
+.main-page {
+   &__products {
+      display: grid;
+
+      max-width: rem(1460);
+      margin: auto;
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: rem(20) rem(10);
+   }
+}
