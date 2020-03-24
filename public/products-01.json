@@ -1,0 +1,123 @@
+[
+   {
+      "id": 10,
+      "title": "Jumping Minion",
+      "image": "minion-10",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 11,
+      "title": "Surprised Minion",
+      "image": "minion-11",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 12,
+      "title": "Suspicious Minion",
+      "image": "minion-12",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 13,
+      "title": "Minion-housewife",
+      "image": "minion-13",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 14,
+      "title": "Satisfied Minion",
+      "image": "minion-14",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 15,
+      "title": "Fat Minion",
+      "image": "minion-15",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 16,
+      "title": "Affable Minion",
+      "image": "minion-16",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 17,
+      "title": "Scared Minion",
+      "image": "minion-17",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 18,
+      "title": "Minion-manager",
+      "image": "minion-18",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 19,
+      "title": "Minion-golfer",
+      "image": "minion-19",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 20,
+      "title": "Inhospitable Minion",
+      "image": "minion-20",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   }
+]

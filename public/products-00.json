@@ -1,0 +1,112 @@
+[
+   {
+      "id": 0,
+      "title": "Happy Minion",
+      "image": "minion-00",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 1,
+      "title": "Fighting Minion",
+      "image": "minion-01",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 2,
+      "title": "Smart Minion",
+      "image": "minion-02",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 3,
+      "title": "Stupid Minion",
+      "image": "minion-03",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 4,
+      "title": "Bored Minion",
+      "image": "minion-04",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 5,
+      "title": "Shoked Minion",
+      "image": "minion-05",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 6,
+      "title": "Minion with bananas",
+      "image": "minion-06",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 7,
+      "title": "Female Minion",
+      "image": "minion-07",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 8,
+      "title": "Beach Minion",
+      "image": "minion-08",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   },
+   {
+      "id": 9,
+      "title": "Cute Minion",
+      "image": "minion-09",
+      "price": 20,
+      "label": null,
+      "eyes": 2,
+      "color": "yellow",
+      "clothes": "overall",
+      "status": null
+   }
+]
