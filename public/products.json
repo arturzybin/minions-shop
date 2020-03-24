@@ -5,7 +5,7 @@
       "image": "minion-00.png",
       "price": 31,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -16,7 +16,7 @@
       "image": "minion-01.png",
       "price": 89,
       "label": "hot",
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -27,7 +27,7 @@
       "image": "minion-02.png",
       "price": 15,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -38,7 +38,7 @@
       "image": "minion-03.png",
       "price": 25,
       "label": "new",
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -49,7 +49,7 @@
       "image": "minion-04.png",
       "price": 20,
       "label": "hot",
-      "eyes": 1,
+      "eyes": "1",
       "color": "purple",
       "clothes": "work",
       "status": null
@@ -60,7 +60,7 @@
       "image": "minion-05.png",
       "price": 21,
       "label": "last",
-      "eyes": 2,
+      "eyes": "2",
       "color": "purple",
       "clothes": "work",
       "status": null
@@ -71,7 +71,7 @@
       "image": "minion-06.png",
       "price": 36,
       "label": "sale",
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -82,7 +82,7 @@
       "image": "minion-07.png",
       "price": 46,
       "label": null,
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "casual",
       "status": null
@@ -93,7 +93,7 @@
       "image": "minion-08.png",
       "price": 23,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "casual",
       "status": null
@@ -104,7 +104,7 @@
       "image": "minion-09.png",
       "price": 125,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -115,7 +115,7 @@
       "image": "minion-10.png",
       "price": 48,
       "label": "sale",
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -126,7 +126,7 @@
       "image": "minion-11.png",
       "price": 25,
       "label": "sale",
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -137,7 +137,7 @@
       "image": "minion-12.png",
       "price": 20,
       "label": "hot",
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -148,7 +148,7 @@
       "image": "minion-13.png",
       "price": 36,
       "label": "last",
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "casual",
       "status": null
@@ -159,7 +159,7 @@
       "image": "minion-14.png",
       "price": 75,
       "label":"new",
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -170,7 +170,7 @@
       "image": "minion-15.png",
       "price": 23,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -181,7 +181,7 @@
       "image": "minion-16.png",
       "price": 29,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -192,7 +192,7 @@
       "image": "minion-17.png",
       "price": 41,
       "label": null,
-      "eyes": 2,
+      "eyes": "2",
       "color": "purple",
       "clothes": "work",
       "status": null
@@ -203,7 +203,7 @@
       "image": "minion-18.png",
       "price": 78,
       "label": "new",
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "work",
       "status": null
@@ -214,7 +214,7 @@
       "image": "minion-19.png",
       "price": 56,
       "label": "last",
-      "eyes": 2,
+      "eyes": "2",
       "color": "yellow",
       "clothes": "casual",
       "status": null
@@ -225,7 +225,7 @@
       "image": "minion-20.png",
       "price": 34,
       "label": null,
-      "eyes": 1,
+      "eyes": "1",
       "color": "yellow",
       "clothes": "work",
       "status": null

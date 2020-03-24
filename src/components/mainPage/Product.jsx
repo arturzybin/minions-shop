@@ -9,7 +9,7 @@ import filledBag from '../../img/filled-bag.svg';
 import { saveProduct, addProductToBag, removeProductStatus } from '../../redux/actions';
 
 
-export function MainPageProduct({ product }) {
+export function Product({ product }) {
    const dispatch = useDispatch()
 
    const { id, title, image, price, label, status } = product

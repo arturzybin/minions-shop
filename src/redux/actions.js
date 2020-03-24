@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, SHOW_LOADER, HIDE_LOADER, CHANGE_STATUS } from "./types";
+import { FETCH_PRODUCTS, SHOW_LOADER, HIDE_LOADER, CHANGE_STATUS, CHANGE_FILTER } from "./types";
 
 
 export function fetchFirstProducts() {
@@ -51,3 +51,11 @@ export const removeProductStatus = (id) => (
 
 export const showLoader = () => ({ type: SHOW_LOADER })
 export const hideLoader = () => ({ type: HIDE_LOADER })
+
+export function changeFilter(filter, value) {
+   if (!value) value = null
+   return ({
+      type: CHANGE_FILTER,
+      payload: { filter, value }
+   })
+}

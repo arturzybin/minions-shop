@@ -1,0 +1,66 @@
+@import '../../mixins';
+@import '../../vars';
+
+.filters {
+   text-align: center;
+   margin-bottom: rem(10);
+
+   /* Reset Select */
+   select {
+      width: rem(150);
+      padding: 0 rem(8);
+
+      cursor: pointer;
+
+      border: 0 !important;
+      outline: 0;
+      background: transparent;
+      background-image: none;
+      box-shadow: none;
+
+      appearance: none;
+      flex: 1;
+
+      option {
+         background-color: #eaeae9;
+      }
+   }
+
+   /* Custom Select */
+   &__select {
+      line-height: 2;
+
+      position: relative;
+
+      display: flex;
+      display: inline-block;
+      overflow: hidden;
+
+      width: rem(150);
+      height: rem(32);
+      margin: rem(10) rem(5);
+
+      border: rem(1) solid #4A77FF;
+      border-radius: rem(4);
+   }
+
+
+   /* Arrow */
+   &__select::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      padding: 0 rem(16);
+
+      content: '\25BC';
+      cursor: pointer;
+      transition: .25s all ease;
+      pointer-events: none;
+   }
+
+   /* Transition */
+   &__select:hover::after {
+      color: #f39c12;
+   }
+}

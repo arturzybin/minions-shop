@@ -1,8 +1,10 @@
 import React from 'react';
-import { MainPageProducts } from './MainPageProducts';
+import { Products } from './Products';
+import { Filters } from './Filters';
 
 export const MainPage = () => (
    <div className="main-page">
-      <MainPageProducts />
+      <Filters />
+      <Products />
    </div>
 )
