@@ -1,11 +1,28 @@
 import { FETCH_PRODUCTS, SHOW_LOADER, HIDE_LOADER, CHANGE_STATUS } from "./types";
 
 
-export function fetchFirstProducts(id) {
+export function fetchFirstProducts() {
    return async (dispatch) => {
       dispatch({ type: SHOW_LOADER })
-      const response = await fetch(process.env.PUBLIC_URL + `/products-${id}.json`);
+
+      const response = await fetch(process.env.PUBLIC_URL + '/products.json');
       const products = await response.json()
+
+      dispatch({ type: FETCH_PRODUCTS, payload: products })
+      dispatch({ type: HIDE_LOADER })
+   }
+}
+
+export function fetchNewProducts(nextId) {
+   return async (dispatch) => {
+      dispatch({ type: SHOW_LOADER })
+
+      const response = await fetch(process.env.PUBLIC_URL + '/products.json');
+      const products = await response.json()
+      products.forEach((product) => {
+         product.id = nextId++
+      })
+
       dispatch({ type: FETCH_PRODUCTS, payload: products })
       dispatch({ type: HIDE_LOADER })
    }
