@@ -1,8 +1,13 @@
 * {
    font-family: 'Nunito', sans-serif;
 }
+body {
+   background: #EAEAE9;
+}
+
 
 @import './media';
 
 @import './modules/header';
 @import './modules/main-page';
+@import './modules/main-page-product';

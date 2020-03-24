@@ -4,10 +4,10 @@
    &__products {
       display: grid;
 
-      max-width: rem(1460);
+      max-width: rem(1000);
       margin: auto;
 
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: rem(20) rem(10);
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: rem(40) rem(20);
    }
 }

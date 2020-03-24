@@ -6,6 +6,7 @@
 
    background-color: $light-green;
    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+   margin-bottom: rem(50);
 
    &__container {
       position: relative;
@@ -53,7 +54,7 @@
       width: rem(55);
    }
 
-   &__bag-count {
+   &__products-count {
       font-weight: bold;
 
       position: absolute;
@@ -61,7 +62,9 @@
       left: 50%;
 
       transform: translate(-50%, -10%);
+   }
 
-      color: $grey;
+   &__saved-count {
+      transform: translate(-50%, -60%);
    }
 }

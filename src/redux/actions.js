@@ -1,10 +1,10 @@
-import { FETCH_PRODUCTS, SHOW_LOADER, HIDE_LOADER } from "./types";
+import { FETCH_PRODUCTS, SHOW_LOADER, HIDE_LOADER, CHANGE_STATUS } from "./types";
 
 
-export function fetchFirstProducts() {
+export function fetchFirstProducts(id) {
    return async (dispatch) => {
       dispatch({ type: SHOW_LOADER })
-      const response = await fetch(process.env.PUBLIC_URL + '/products-00.json');
+      const response = await fetch(process.env.PUBLIC_URL + `/products-${id}.json`);
       const products = await response.json()
       dispatch({ type: FETCH_PRODUCTS, payload: products })
       dispatch({ type: HIDE_LOADER })
@@ -12,15 +12,25 @@ export function fetchFirstProducts() {
 }
 
 
-export function fetchRemainingProducts() {
-   return async (dispatch) => {
-      dispatch({ type: SHOW_LOADER })
-      const response = await fetch(process.env.PUBLIC_URL + '/products-01.json');
-      const products = await response.json()
-      dispatch({ type: FETCH_PRODUCTS, payload: products })
-      dispatch({ type: HIDE_LOADER })
-   }
-}
+export const saveProduct = (id) => (
+   {type: CHANGE_STATUS, payload: {
+      id,
+      status: 'saved'
+   }}
+)
+export const addProductToBag = (id) => (
+   {type: CHANGE_STATUS, payload: {
+      id,
+      status: 'bag'
+   }}
+)
+export const removeProductStatus = (id) => (
+   {type: CHANGE_STATUS, payload: {
+      id,
+      status: null
+   }}
+)
+
 
 export const showLoader = () => ({ type: SHOW_LOADER })
 export const hideLoader = () => ({ type: HIDE_LOADER })

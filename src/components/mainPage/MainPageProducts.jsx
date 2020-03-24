@@ -10,7 +10,7 @@ export function MainPageProducts() {
    const isLoading = useSelector((state => state.app.isLoading))
 
    if (!products.length && !isLoading) {
-      dispatch(fetchFirstProducts())
+      dispatch(fetchFirstProducts('00'))
    }
 
    const productsTemplate = products.map((product) => (
