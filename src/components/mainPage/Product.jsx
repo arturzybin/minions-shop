@@ -37,7 +37,7 @@ export function Product({ product }) {
 
 
    return (
-      <div className="main-page__product main-page-product">
+      <div className="main-page-product">
          <img src={imageSrc} alt="minion" className="main-page-product__image" />
          <h4 className="main-page-product__title">{title}</h4>
          <div className="main-page-product__price-buttons-container">

@@ -11,11 +11,11 @@ export function Products() {
    let products = useSelector((state) => state.products);
    const nextId = (products.length) ? products[products.length - 1].id + 1 : null
    
-   products = products.filter((product) => filterProduct(product, filters))
-
    if (!products.length && !isLoading) {
       dispatch(fetchFirstProducts())
    }
+   
+   products = products.filter((product) => filterProduct(product, filters))
 
    products = products.map((product) => (
       <Product product={product} key={product.id} />
