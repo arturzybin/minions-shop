@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Product } from './Product';
 import { changeActivePage } from '../../redux/actions';
+import { Product } from './Product';
+import { NothingThere } from '../NothingThere';
 
 export function SavedProducts() {
    const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export function SavedProducts() {
             >To main page</button>
          </div>
          <div className="saved__products">
-            {products}
+            {products.length ? products : <NothingThere />}
          </div>
       </div>
    )
