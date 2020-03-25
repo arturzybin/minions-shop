@@ -71,6 +71,15 @@
          box-shadow: 0 rem(1) rem(3) rgba(0,0,0,.12), 0 rem(1) rem(2) rgba(0,0,0,.24);
       }
    }
+
+   &__message {
+      position: absolute;
+      left: rem(10);
+      top: rem(10);
+      font-weight: bold;
+      color: #E1341E;
+      text-decoration: underline;
+   }
 }
 
 
