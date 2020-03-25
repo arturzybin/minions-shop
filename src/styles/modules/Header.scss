@@ -68,3 +68,28 @@
       transform: translate(-50%, -60%);
    }
 }
+
+
+@media only screen and (max-width : 768px) {
+   .header {
+      &__button {
+         width: rem(60);
+      }
+
+      &__bag-button {
+         width: rem(65);
+      }
+   }
+}
+
+@media only screen and (max-width : 480px) {
+   .header {
+      &__button {
+         right: rem(5);
+      }
+
+      &__saved-button {
+         right: rem(60);
+      }
+   }
+}

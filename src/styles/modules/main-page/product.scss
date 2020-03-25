@@ -82,7 +82,6 @@
    }
 
    &__label {
-      font-size: rem(18);
       font-size: rem(15);
       font-weight: bold;
 
@@ -110,6 +109,103 @@
       &_type_sale {
          color: #e05f17;
          border-color: #e05f17;
+      }
+   }
+}
+
+
+
+@media screen and (max-width: 1224px) {
+   .main-page-product {
+      &__image {
+         width: rem(180);
+      }
+
+      &__title {
+         font-size: rem(23);
+
+         margin: rem(30) 0;
+      }
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .main-page-product {
+      padding-bottom: rem(45);
+
+      &__image {
+         width: rem(200);
+      }
+
+      &__title {
+         font-size: rem(30);
+
+         margin: rem(30) 0;
+      }
+
+      &__price {
+         font-size: rem(25);
+      }
+
+      &__button {
+         right: rem(15);
+         bottom: 0;
+
+         width: rem(35);
+
+         &:hover {
+            width: rem(37);
+         }
+      }
+
+      &__save-button {
+         right: rem(60);
+      }
+
+      &__label {
+         font-size: rem(20);
+
+         border-radius: rem(10);
+      }
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .main-page-product {
+      padding-bottom: rem(55);
+
+      &__image {
+         width: rem(240);
+      }
+
+      &__title {
+         font-size: rem(34);
+
+         margin: rem(35) 0;
+      }
+
+      &__price {
+         font-size: rem(30);
+      }
+
+      &__button {
+         right: rem(20);
+
+         width: rem(40);
+
+         &:hover {
+            width: rem(42);
+         }
+      }
+
+      &__save-button {
+         right: rem(70);
+      }
+
+      &__label {
+         font-size: rem(25);
+
+         border-radius: rem(13);
       }
    }
 }

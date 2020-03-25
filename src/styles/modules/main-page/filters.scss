@@ -2,8 +2,9 @@
 @import '../../vars';
 
 .filters {
-   text-align: center;
    margin-bottom: rem(10);
+
+   text-align: center;
 
    /* Reset Select */
    select {
@@ -40,7 +41,7 @@
       height: rem(32);
       margin: rem(10) rem(5);
 
-      border: rem(1) solid #4A77FF;
+      border: rem(1) solid #4a77ff;
       border-radius: rem(4);
    }
 
@@ -62,5 +63,28 @@
    /* Transition */
    &__select:hover::after {
       color: #f39c12;
+   }
+}
+
+
+@media screen and (max-width: 768px) {
+   .filters {
+      select {
+         line-height: rem(45);
+
+         width: rem(200);
+         padding: 0 rem(8);
+      }
+
+      &__select {
+         font-size: rem(20);
+         line-height: rem(45);
+
+         width: rem(200);
+         height: rem(45);
+         // margin: rem(10) rem(5);
+
+         border-radius: rem(10);
+      }
    }
 }
