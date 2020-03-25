@@ -10,7 +10,8 @@ export function Bag() {
    let products = useSelector((state) => state.products);
 
    products = products.filter((product) => product.status === 'bag')
-   const productsCount = products.length;
+   let productsCount = products.length;
+   productsCount += (productsCount === 1) ? ' minion' : ' minions';
    const amount = products.reduce((acc, product) => acc + product.price, 0);
 
    products = products.map((product) => (
@@ -35,7 +36,7 @@ export function Bag() {
             <div className="bag__order order">
                <h3 className="order__title">Total</h3>
                <div className="order__amount">{amount}$</div>
-               <div className="order__products-count">{productsCount} minions</div>
+               <div className="order__products-count">{productsCount}</div>
                <input type="text" name="email" className="order__email" placeholder="Email" />
                <button className="order__button">Receive order</button>
             </div>
