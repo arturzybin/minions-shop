@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addProductToBag } from '../../redux/actions';
+import { addProductToBag, removeProductStatus } from '../../redux/actions';
 
 
 export function Product({ product }) {
@@ -14,7 +14,9 @@ export function Product({ product }) {
    const handleMoveToBag = () => {
       dispatch(addProductToBag(id))
    }
-
+   const handleRemove = () => {
+      dispatch(removeProductStatus(id))
+   }
 
    return (
       <div className="saved-product">
@@ -23,9 +25,10 @@ export function Product({ product }) {
          
          <div className="saved-product__price-button-container">
             <div className="saved-product__price">{price}$</div>
-            <button className="saved-product__button" onClick={handleMoveToBag}>Move to bag</button>
+            <button className="saved-product__move-to-bag-button" onClick={handleMoveToBag}>Move to bag</button>
          </div>
 
+         <button className="saved-product__remove-button" onClick={handleRemove}>&#215;</button>
          {label && <div className={"saved-product__label saved-product__label_type_" + label}>{label}</div>}
       </div>
    )
