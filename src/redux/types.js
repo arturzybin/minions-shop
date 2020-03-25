@@ -1,3 +1,5 @@
+// app
+export const CHANGE_ACTIVE_PAGE = 'CHANGE_ACTIVE_PAGE'
 // products
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS'
 export const SAVE_PRODUCT = 'SAVE_PRODUCT'
