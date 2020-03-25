@@ -25,6 +25,7 @@
 
       grid-template-columns: repeat(5, 1fr);
       grid-gap: rem(40) rem(20);
+      @include appear()
    }
 
    &__main-page-button {

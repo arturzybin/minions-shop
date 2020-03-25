@@ -1,6 +1,8 @@
 @import '../../mixins';
 
 .main-page {
+   @include appear()
+
    &__products {
       display: grid;
 
