@@ -1,0 +1,112 @@
+@import '../../mixins';
+@import '../../vars';
+
+.order {
+   display: inline-block;
+
+   cursor: default;
+   text-align: center;
+
+   background-color: #f3f3f3;
+   box-shadow: 0 rem(3) rem(6) rgba(0,0,0,.16), 0 rem(3) rem(6) rgba(0,0,0,.23);
+
+   &__title {
+      margin: rem(15) 0 rem(10);
+
+      text-decoration: underline;
+   }
+
+   &__amount {
+      display: inline-block;
+
+      width: 50%;
+
+      text-align: center;
+      text-decoration: underline;
+
+      color: $blue;
+      text-shadow: rem(1) rem(1) $grey;
+   }
+
+   &__products-count {
+      display: inline-block;
+
+      width: 50%;
+
+      text-align: center;
+      text-decoration: underline;
+
+      color: $yellow;
+      text-shadow: rem(1) rem(1) $grey;
+   }
+
+   &__email {
+      display: block;
+
+      width: rem(300);
+      margin: rem(20) rem(20);
+
+      border: none;
+      border-bottom: rem(1) solid rgb(119, 119, 119);
+      outline: none;
+      background-color: transparent;;
+   }
+
+   &__button {
+      margin-bottom: rem(10);
+
+      cursor: pointer;
+      transition: all .3s cubic-bezier(.25,.8,.25,1);
+
+      border: none;
+      outline: none;
+      background: none;
+      box-shadow: 0 rem(1) rem(3) rgba(0,0,0,.12), 0 rem(1) rem(2) rgba(0,0,0,.24);
+
+      &:hover {
+         box-shadow: 0 rem(3) rem(6) rgba(0,0,0,.16), 0 rem(3) rem(6) rgba(0,0,0,.23);
+      }
+
+      &:active {
+         box-shadow: 0 rem(1) rem(3) rgba(0,0,0,.12), 0 rem(1) rem(2) rgba(0,0,0,.24);
+      }
+   }
+}
+
+
+@media screen and (max-width: 1224px) {
+   .order {
+      &__title {
+         font-size: rem(24);
+      }
+      &__amount,
+      &__products-count,
+      &__email {
+         font-size: rem(18);
+      }
+      &__button {
+         font-size: rem(20);
+      }
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .order {
+      &__title {
+         font-size: rem(30);
+      }
+      &__amount,
+      &__products-count,
+      &__email {
+         font-size: rem(21);
+      }
+      &__email {
+         width: rem(400);
+      }
+      &__button {
+         font-size: rem(23);
+
+         padding: rem(8) rem(10);
+      }
+   }
+}
