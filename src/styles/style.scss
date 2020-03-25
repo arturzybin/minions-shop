@@ -13,6 +13,8 @@
 
 
 @import './modules/header';
+@import './modules/footer';
+@import './modules/loading';
 
 @import './modules/main-page/filters';
 @import './modules/main-page/main-page';
@@ -24,5 +26,3 @@
 @import './modules/bag/bag';
 @import './modules/bag/product';
 @import './modules/bag/order';
-
-@import './modules/footer';
