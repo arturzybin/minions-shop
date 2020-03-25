@@ -1,8 +1,8 @@
-# Project Title
+# Minions shop
 
 Online minions shop. Filter minions, save them or add them to bag, then checkout and be happy!
 
-Available [here](https://arturzybin.github.io/) =)
+Available [here](https://arturzybin.github.io/minions-shop/) =)
 
 ## Getting Started
 
