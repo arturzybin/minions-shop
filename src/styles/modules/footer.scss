@@ -1,0 +1,25 @@
+@import '../mixins';
+@import '../vars';
+
+.footer {
+   position: absolute;
+   bottom: 0;
+
+   width: 100%;
+   height: rem(50);
+
+   text-align: center;
+
+   background-color: $green-background;
+   box-shadow: 0 rem(-3) rem(6) rgba(0,0,0,.16), 0 rem(-3) rem(6) rgba(0,0,0,.23);
+
+
+   &__copyright {
+      line-height: rem(50);
+   }
+
+   &__placeholder {
+      height: rem(50);
+      margin-top: rem(50);
+   }
+}

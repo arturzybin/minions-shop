@@ -1,14 +1,21 @@
+@import './vars';
 * {
    font-family: 'Nunito', sans-serif;
 }
-body {
-   background: #EAEAE9;
+#root {
+   background: $grey-background;
+   position: relative;
+   min-height: 100vh;
 }
 
 
 @import './media';
 
+
 @import './modules/header';
+
 @import './modules/main-page/filters';
 @import './modules/main-page/main-page';
 @import './modules/main-page/main-page-product';
+
+@import './modules/footer';
