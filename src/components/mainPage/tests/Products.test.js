@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { mount } from 'enzyme'
 
-import { Products } from './Products'
+import { Products } from '../Products'
 
 
 const initialState = {
