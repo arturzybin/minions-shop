@@ -77,8 +77,14 @@
       left: rem(10);
       top: rem(10);
       font-weight: bold;
-      color: #E1341E;
       text-decoration: underline;
+
+      &_color_red {
+         color: #E1341E;
+      }
+      &_color_green {
+         color: #1EE134;
+      }
    }
 }
 

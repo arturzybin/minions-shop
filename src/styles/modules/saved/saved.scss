@@ -1,6 +1,8 @@
 @import '../../mixins';
 
 .saved {
+   padding-top: rem(110);
+   
    &__title-container {
       position: relative;
 

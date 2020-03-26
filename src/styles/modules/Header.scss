@@ -2,18 +2,22 @@
 @import '../vars';
 
 .header {
+   position: fixed;
+   z-index: 10;
+   top: 0;
+
+   width: 100%;
+
    text-align: center;
 
    background-color: $green-background;
    box-shadow: 0 rem(3) rem(6) rgba(0,0,0,.16), 0 rem(3) rem(6) rgba(0,0,0,.23);
-   margin-bottom: rem(20);
 
    &__container {
       position: relative;
 
       max-width: rem(1460);
-margin: auto;
-
+      margin: auto;
    }
 
    &__title {

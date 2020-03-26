@@ -2,6 +2,7 @@
 @import '../../vars';
 
 .bag {
+   padding-top: rem(110);
    &__container {
       max-width: rem(1000);
       margin: auto;
