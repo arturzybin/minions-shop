@@ -2,5 +2,8 @@ import React from 'react';
 import minion from '../img/minion.svg';
 
 export const NothingThere = () => (
-   <img src={minion} alt="nothing there" className="nothing-there"/>
+   <div className="nothing-there">
+      <h6 className="nothing-there__title">Nothing there</h6>
+      <img src={minion} alt="minion" className="nothing-there__image" />
+   </div>
 )

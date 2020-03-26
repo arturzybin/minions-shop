@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchFirstProducts, fetchNewProducts } from '../../redux/actions';
 import { Product } from './Product';
-import { Loading } from './Loading';
+import { Loading } from '../Loading';
+import { NothingThere } from '../NothingThere';
 
 
 export function Products() {
@@ -34,14 +35,14 @@ export function Products() {
             >Load more</button>
          </div>
          :
-         <Loading />
+         isLoading ? <Loading /> : <NothingThere />
    )
 }
 
 
 function filterProduct(product, filters) {
    for (let filter of Object.keys(filters)) {
-      if (!filters[filter]) continue
+      if ( !filters[filter] ) continue
       if (product[filter] !== filters[filter]) return false
    }
    return true

@@ -5,7 +5,15 @@
    left: calc(50% - 4.6875rem);
    width: rem(150);
 
-   animation: rotate 2s ease-in-out infinite;
+   &__title {
+      text-align: center;
+      margin: rem(10);
+      font-size: rem(18);
+   }
+
+   &__image {
+      animation: rotate 2s ease-in-out infinite;
+   }
 }
 
 @keyframes rotate {
