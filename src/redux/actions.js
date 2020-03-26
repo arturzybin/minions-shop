@@ -67,10 +67,7 @@ export const removeProductStatus = (id) => (
 export const showLoader = () => ({ type: SHOW_LOADER })
 export const hideLoader = () => ({ type: HIDE_LOADER })
 
-export function changeFilter(filter, value) {
-   if (!value) value = null
-   return ({
-      type: CHANGE_FILTER,
-      payload: { filter, value }
-   })
-}
+export const changeFilter = (filter, value) => ({
+   type: CHANGE_FILTER,
+   payload: { filter, value }
+})
