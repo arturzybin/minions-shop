@@ -1,19 +1,22 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { IGlobalState, IProduct } from '../../interfaces';
+
 import { changeActivePage } from '../../redux/actions';
 import { Product } from './Product';
 import { NothingThere } from '../NothingThere';
 import { Order } from './Order';
 
+
 export function Bag() {
    const dispatch = useDispatch();
-   let products = useSelector((state) => state.products);
+   let products: IProduct[] = useSelector((state: IGlobalState) => state.products);
 
-   products = products.filter((product) => product.status === 'bag')
-   let productsCount = products.length;
+   products = products.filter((product: IProduct) => product.status === 'bag')
+   let productsCount: number = products.length;
 
-   const productsTemplate = products.map((product) => (
+   const productsTemplate = products.map((product: IProduct) => (
       <Product product={product} key={product.id} />
    ));
 
@@ -29,10 +32,10 @@ export function Bag() {
             </div>
 
             <div className="bag__products">
-               {products.length ? productsTemplate : <NothingThere />}
+               {productsCount ? productsTemplate : <NothingThere />}
             </div>
 
-            <Order products={products} productsCount={productsCount} />
+            <Order products={products} />
          </div>
       </div>
    )

@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import validator from 'email-validator';
 
+import { IProduct } from '../../interfaces';
+
 import { removeProductStatus } from '../../redux/actions';
 
 
-export function Order({ products, productsCount }) {
-   function createOrder() {
+type TProps = { products: IProduct[] }
+
+export function Order({ products }: TProps) {
+   function createOrder(): void {
       if (!validator.validate(email)) {
          showOrderMessage('Invalid email', 'red')
          return
@@ -22,11 +26,11 @@ export function Order({ products, productsCount }) {
    }
 
 
-   const [email, setEmail] = useState('');
+   const [email, setEmail] = useState<string>('');
    const dispatch = useDispatch();
 
-   productsCount += (productsCount === 1) ? ' minion' : ' minions';
-   const amount = products.reduce((acc, product) => acc + product.price, 0);
+   const productsCount: string = products.length + ((products.length === 1) ? ' minion' : ' minions');
+   const amount: number = products.reduce((acc, product) => acc + product.price, 0);
 
 
    return (
@@ -47,9 +51,9 @@ export function Order({ products, productsCount }) {
 }
 
 
-function showOrderMessage(message, color) {
-   const messageContainer = document.querySelector('.order__message')
-   messageContainer.className = "order__message order__message_color_" + color;
+function showOrderMessage(message: string, color: string) {
+   const messageContainer: Element = document.querySelector('.order__message')!
+   messageContainer.className = "order__message order__message_color_" + color
    messageContainer.textContent = message;
 
    setTimeout(() => messageContainer.textContent = null, 3000)

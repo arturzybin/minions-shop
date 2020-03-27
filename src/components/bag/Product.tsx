@@ -1,14 +1,18 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import { IProduct } from '../../interfaces';
+
 import { removeProductStatus, saveProduct } from '../../redux/actions';
 
 
-export function Product({ product }) {
+type TProps = {product: IProduct}
+
+export function Product({ product }: TProps) {
    const dispatch = useDispatch()
 
    const { id, title, image, price, label } = product
-   const imageSrc = process.env.PUBLIC_URL + '/minions/' + image
+   const imageSrc: string = process.env.PUBLIC_URL + '/minions/' + image
 
 
    const handleSave = () => {
