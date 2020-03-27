@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { IGlobalState, IProduct } from '../interfaces';
 
 import title from '../img/title.svg';
 import heart from '../img/heart.svg';
@@ -9,9 +10,9 @@ import { changeActivePage } from '../redux/actions';
 
 export function Header() {
    const dispatch = useDispatch();
-   const products = useSelector((state) => state.products)
-   const savedProductsCount = products.filter((product) => product.status === 'saved').length;
-   const bagProductsCount = products.filter((product) => product.status === 'bag').length;
+   const products: IProduct[] = useSelector((state: IGlobalState) => state.products)
+   const savedProductsCount: number = products.filter((product: IProduct) => product.status === 'saved').length;
+   const bagProductsCount: number = products.filter((product: IProduct) => product.status === 'bag').length;
 
    return (
       <header className="header">
