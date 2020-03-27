@@ -10,11 +10,14 @@ import { NothingThere } from '../NothingThere';
 
 
 export function Products() {
+   function getNextId(): number {
+      return products[products.length - 1].id + 1
+   }
+
    const dispatch = useDispatch();
    const isLoading = useSelector((state: IGlobalState) => state.mainPage.isLoading)
    const filters = useSelector((state: IGlobalState) => state.mainPage.filters)
    let products = useSelector((state: IGlobalState) => state.products);
-   const nextId: number | null = (products.length) ? products[products.length - 1].id + 1 : null
 
    if (!products.length && !isLoading) {
       dispatch(fetchFirstProducts())
@@ -25,14 +28,13 @@ export function Products() {
       <Product product={product} key={product.id} />
    ));
 
-
    return (
       products.length ?
          <div className="main-page__products">
             {productsTemplate}
             <button
                className="main-page__load-more-button"
-               onClick={() => dispatch(fetchNewProducts(nextId))}
+               onClick={() => dispatch(fetchNewProducts(getNextId()))}
             >Load more</button>
          </div>
          :
@@ -41,10 +43,21 @@ export function Products() {
 }
 
 
-function filterProduct(product, filters) {
-   for (let filter of Object.keys(filters)) {
+type TFilters = {
+   eyes?: string,
+   clothes?: string,
+   color?: string
+}
+
+function filterProduct(product: IProduct, filters: TFilters): boolean {
+   for (let filter of typedKeys(filters)) {
       if ( !filters[filter] ) continue
       if (product[filter] !== filters[filter]) return false
    }
    return true
+}
+
+
+function typedKeys<T>(o: T): (keyof T)[] {
+   return Object.keys(o) as (keyof T)[];
 }

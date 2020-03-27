@@ -69,7 +69,7 @@ export const showLoader = () => ({ type: SHOW_LOADER })
 export const hideLoader = () => ({ type: HIDE_LOADER })
 
 type TFilter = 'eyes' | 'clothes' | 'color'
-export const changeFilter = (filter: TFilter, value: string) => ({
+export const changeFilter = (filter: string, value: string) => ({
    type: CHANGE_FILTER,
    payload: { filter, value }
 })

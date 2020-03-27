@@ -7,7 +7,6 @@ export function Filters() {
    const dispatch = useDispatch();
    const {eyes, clothes, color} = useSelector((state: IGlobalState) => state.mainPage.filters)
 
-
    function handleFilterChange(event: React.FormEvent<HTMLSelectElement>) {
       const target = event.target as HTMLSelectElement
       const filter: string = target.name
