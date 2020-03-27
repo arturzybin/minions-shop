@@ -4,15 +4,14 @@ import configureStore from 'redux-mock-store'
 import { mount } from 'enzyme'
 
 import { Header } from './Header'
-import { ITestGlobalState } from '../interfaces'
 
 
 describe('Header should show right saved and bag products count', () => {
-   const mockStore: Function = configureStore()
+   const mockStore = configureStore()
 
    
    it('shows 0 saved and 0 bag products', () => {
-      const state: ITestGlobalState = { products: [{ "status": null }, { "status": null }, { "status": null }, { "status": null }] }
+      const state = { products: [{ "status": null }, { "status": null }, { "status": null }, { "status": null }] }
       const store = mockStore(state)
       const wrap = mount(<Provider store={store}><Header /></Provider>)
 

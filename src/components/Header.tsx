@@ -8,7 +8,7 @@ import bag from '../img/bag.svg';
 import { changeActivePage } from '../redux/actions';
 
 
-export function Header() {
+export const Header: React.FC = () => {
    const dispatch = useDispatch();
    const products: IProduct[] = useSelector((state: IGlobalState) => state.products)
    const savedProductsCount: number = products.filter((product: IProduct) => product.status === 'saved').length;

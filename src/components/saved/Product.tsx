@@ -2,19 +2,22 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addProductToBag, removeProductStatus } from '../../redux/actions';
+import { IProduct } from '../../interfaces';
 
 
-export function Product({ product }) {
+type TProps = {product: IProduct}
+
+export function Product({ product }: TProps) {
    const dispatch = useDispatch()
 
-   const { id, title, image, price, label } = product
-   const imageSrc = process.env.PUBLIC_URL + '/minions/' + image
+   const { id, title, image, price, label }: IProduct = product
+   const imageSrc: string = process.env.PUBLIC_URL + '/minions/' + image
 
 
-   const handleMoveToBag = () => {
+   const handleMoveToBag = (): void => {
       dispatch(addProductToBag(id))
    }
-   const handleRemove = () => {
+   const handleRemove = (): void => {
       dispatch(removeProductStatus(id))
    }
 
