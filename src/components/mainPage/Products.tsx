@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { IGlobalState, IProduct } from '../../interfaces';
+
 import { fetchFirstProducts, fetchNewProducts } from '../../redux/actions';
 import { Product } from './Product';
 import { Loading } from '../Loading';
@@ -9,18 +11,17 @@ import { NothingThere } from '../NothingThere';
 
 export function Products() {
    const dispatch = useDispatch();
-   const isLoading = useSelector((state => state.mainPage.isLoading))
-   const filters = useSelector((state) => state.mainPage.filters)
-   let products = useSelector((state) => state.products);
-   const nextId = (products.length) ? products[products.length - 1].id + 1 : null
+   const isLoading = useSelector((state: IGlobalState) => state.mainPage.isLoading)
+   const filters = useSelector((state: IGlobalState) => state.mainPage.filters)
+   let products = useSelector((state: IGlobalState) => state.products);
+   const nextId: number | null = (products.length) ? products[products.length - 1].id + 1 : null
 
    if (!products.length && !isLoading) {
       dispatch(fetchFirstProducts())
    }
 
-   products = products.filter((product) => filterProduct(product, filters))
-
-   products = products.map((product) => (
+   products = products.filter((product: IProduct) => filterProduct(product, filters))
+   const productsTemplate = products.map((product: IProduct) => (
       <Product product={product} key={product.id} />
    ));
 
@@ -28,7 +29,7 @@ export function Products() {
    return (
       products.length ?
          <div className="main-page__products">
-            {products}
+            {productsTemplate}
             <button
                className="main-page__load-more-button"
                onClick={() => dispatch(fetchNewProducts(nextId))}

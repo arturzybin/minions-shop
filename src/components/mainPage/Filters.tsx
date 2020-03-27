@@ -1,15 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter } from '../../redux/actions';
+import { IGlobalState } from '../../interfaces';
 
 export function Filters() {
    const dispatch = useDispatch();
-   const {eyes, clothes, color} = useSelector((state) => state.mainPage.filters)
+   const {eyes, clothes, color} = useSelector((state: IGlobalState) => state.mainPage.filters)
 
 
-   function handleFilterChange(event) {
-      const filter = event.target.name
-      const value = event.target.value
+   function handleFilterChange(event: React.FormEvent<HTMLSelectElement>) {
+      const target = event.target as HTMLSelectElement
+      const filter: string = target.name
+      const value: string = target.value
       dispatch(changeFilter(filter, value))
    }
 

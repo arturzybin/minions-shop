@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import { IProduct } from '../../interfaces';
+
 import heart from '../../img/heart.svg';
 import filledHeart from '../../img/filled-heart.svg';
 import bag from '../../img/bag.svg';
@@ -9,16 +11,18 @@ import filledBag from '../../img/filled-bag.svg';
 import { saveProduct, addProductToBag, removeProductStatus } from '../../redux/actions';
 
 
-export function Product({ product }) {
+type TProps = { product: IProduct }
+
+export function Product({ product }: TProps) {
    const dispatch = useDispatch()
 
-   const { id, title, image, price, label, status } = product
-   const imageSrc = process.env.PUBLIC_URL + '/minions/' + image
-   const heartSrc = (status === 'saved') ? filledHeart : heart
-   const bagSrc = (status === 'bag') ? filledBag : bag
+   const { id, title, image, price, label, status }: IProduct = product
+   const imageSrc: string = process.env.PUBLIC_URL + '/minions/' + image
+   const heartSrc: string = (status === 'saved') ? filledHeart : heart
+   const bagSrc: string = (status === 'bag') ? filledBag : bag
 
 
-   const handleSave = () => {
+   const handleSave = (): void => {
       if (status === 'saved') {
          dispatch(removeProductStatus(id))
          return
@@ -27,7 +31,7 @@ export function Product({ product }) {
    }
 
 
-   const handleAddToBag = () => {
+   const handleAddToBag = (): void => {
       if (status === 'bag') {
          dispatch(removeProductStatus(id))
          return
