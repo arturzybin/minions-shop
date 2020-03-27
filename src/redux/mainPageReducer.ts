@@ -1,11 +1,30 @@
 import { SHOW_LOADER, HIDE_LOADER, CHANGE_FILTER } from "./types"
 
+
+type TState = {
+   isLoading: boolean,
+   filters: {
+      eyes?: string,
+      clothes?: string,
+      color?: string
+   }
+}
+
+type TAction = {
+   type: string,
+   payload: {
+      filter: 'eyes' | 'clothes' | 'color',
+      value: string
+   }
+}
+
+
 const initialState = {
    isLoading: false,
    filters: {}
 }
 
-export const mainPageReducer = (state = initialState, action) => {
+export const mainPageReducer = (state: TState = initialState, action: TAction) => {
    switch (action.type) {
       case SHOW_LOADER:
          return { ...state, isLoading: true }

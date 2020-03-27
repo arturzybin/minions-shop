@@ -1,7 +1,8 @@
 import { FETCH_PRODUCTS, SHOW_LOADER, HIDE_LOADER, CHANGE_STATUS, CHANGE_FILTER, CHANGE_ACTIVE_PAGE } from "./types";
+import { IProduct } from "../interfaces";
 
 // app -----------------------------------------------------------------------
-export function changeActivePage(nextPage) {
+export function changeActivePage(nextPage: 'main' | 'saved' | 'bag') {
    return {
       type: CHANGE_ACTIVE_PAGE,
       payload: nextPage
@@ -11,7 +12,7 @@ export function changeActivePage(nextPage) {
 
 // products -----------------------------------------------------------------------
 export function fetchFirstProducts() {
-   return async (dispatch) => {
+   return async (dispatch: Function) => {
       dispatch({ type: SHOW_LOADER })
 
       const response = await fetch(process.env.PUBLIC_URL + '/products.json');
@@ -22,13 +23,13 @@ export function fetchFirstProducts() {
    }
 }
 
-export function fetchNewProducts(nextId) {
-   return async (dispatch) => {
+export function fetchNewProducts(nextId: number) {
+   return async (dispatch: Function) => {
       dispatch({ type: SHOW_LOADER })
 
       const response = await fetch(process.env.PUBLIC_URL + '/products.json');
       const products = await response.json()
-      products.forEach((product) => {
+      products.forEach((product: IProduct) => {
          product.id = nextId++
       })
 
@@ -37,7 +38,7 @@ export function fetchNewProducts(nextId) {
    }
 }
 
-export const saveProduct = (id) => (
+export const saveProduct = (id: number) => (
    {
       type: CHANGE_STATUS, payload: {
          id,
@@ -45,7 +46,7 @@ export const saveProduct = (id) => (
       }
    }
 )
-export const addProductToBag = (id) => (
+export const addProductToBag = (id: number) => (
    {
       type: CHANGE_STATUS, payload: {
          id,
@@ -53,7 +54,7 @@ export const addProductToBag = (id) => (
       }
    }
 )
-export const removeProductStatus = (id) => (
+export const removeProductStatus = (id: number) => (
    {
       type: CHANGE_STATUS, payload: {
          id,
@@ -67,7 +68,8 @@ export const removeProductStatus = (id) => (
 export const showLoader = () => ({ type: SHOW_LOADER })
 export const hideLoader = () => ({ type: HIDE_LOADER })
 
-export const changeFilter = (filter, value) => ({
+type TFilter = 'eyes' | 'clothes' | 'color'
+export const changeFilter = (filter: TFilter, value: string) => ({
    type: CHANGE_FILTER,
    payload: { filter, value }
 })
