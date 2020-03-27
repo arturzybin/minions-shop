@@ -33,6 +33,7 @@ To start the tests run ```npm test``` inside the project directory
 * [Jest](https://jestjs.io) - A JavaScript testing framework
 * [Enzyme](https://enzymejs.github.io/enzyme/) - A JavaScript Testing utility for React
 * [Webpack](https://webpack.js.org/) - A static module bundler for JavaScript applications
+* [TypeScript](https://www.typescriptlang.org/) - JavaScript that scales
 
 ## Authors
 
