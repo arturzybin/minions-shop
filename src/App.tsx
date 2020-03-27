@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { IGlobalState } from './interfaces';
+
 import 'normalize.css';
 import './styles/style.scss';
 
@@ -11,8 +13,8 @@ import { SavedProducts } from './components/saved/SavedProducts';
 import { Bag } from './components/bag/Bag'
 
 
-function App() {
-  const activePage = useSelector((state) => state.app.activePage)
+const App: React.FC = () => {
+  const activePage = useSelector((state: IGlobalState) => state.app.activePage)
   let activePageComponent
   switch (activePage) {
     case 'saved':
