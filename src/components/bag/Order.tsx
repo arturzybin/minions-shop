@@ -19,7 +19,7 @@ export const Order: React.FC<TProps> = ({ products }) => {
          showOrderMessage('Invalid email', 'red')
          return
       }
-      
+
       setEmail('')
       products.forEach((product) => dispatch(removeProductStatus(product.id)))
       showOrderMessage('Success', 'green')
@@ -44,7 +44,7 @@ export const Order: React.FC<TProps> = ({ products }) => {
             value={email}
             type="text" name="email" placeholder="Email"
          />
-         <button className="order__button" onClick={createOrder}>Receive order details</button>
+         <a href="#email" className="order__button" onClick={createOrder}>Get order details</a>
          <div className="order__message"></div>
       </div>
    )

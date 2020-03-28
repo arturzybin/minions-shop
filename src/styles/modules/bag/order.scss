@@ -53,14 +53,16 @@
    }
 
    &__button {
+      display: inline-block;
+
       margin-bottom: rem(10);
+      padding: 1px rem(6);
 
       cursor: pointer;
       transition: all .3s cubic-bezier(.25,.8,.25,1);
+      text-decoration: none;
 
-      border: none;
-      outline: none;
-      background: none;
+      color: #000;
       box-shadow: 0 rem(1) rem(3) rgba(0,0,0,.12), 0 rem(1) rem(2) rgba(0,0,0,.24);
 
       &:hover {
@@ -73,17 +75,19 @@
    }
 
    &__message {
-      position: absolute;
-      left: rem(10);
-      top: rem(10);
       font-weight: bold;
+
+      position: absolute;
+      top: rem(10);
+      left: rem(10);
+
       text-decoration: underline;
 
       &_color_red {
-         color: #E1341E;
+         color: #e1341e;
       }
       &_color_green {
-         color: #1EE134;
+         color: #1ee134;
       }
    }
 }
