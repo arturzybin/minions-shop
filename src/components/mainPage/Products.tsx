@@ -9,7 +9,7 @@ import { Loading } from '../Loading';
 import { NothingThere } from '../NothingThere';
 
 
-export function Products() {
+export const Products: React.FC = () => {
    function getNextId(): number {
       return products[products.length - 1].id + 1
    }
@@ -43,13 +43,13 @@ export function Products() {
 }
 
 
-type TFilters = {
+interface IFilters {
    eyes?: string,
    clothes?: string,
    color?: string
 }
 
-function filterProduct(product: IProduct, filters: TFilters): boolean {
+function filterProduct(product: IProduct, filters: IFilters): boolean {
    for (let filter of typedKeys(filters)) {
       if ( !filters[filter] ) continue
       if (product[filter] !== filters[filter]) return false

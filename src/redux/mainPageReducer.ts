@@ -19,12 +19,12 @@ type TAction = {
 }
 
 
-const initialState = {
+const initialState: TState = {
    isLoading: false,
    filters: {}
 }
 
-export const mainPageReducer = (state: TState = initialState, action: TAction) => {
+export const mainPageReducer = (state: TState = initialState, action: TAction): TState => {
    switch (action.type) {
       case SHOW_LOADER:
          return { ...state, isLoading: true }

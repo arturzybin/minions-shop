@@ -9,14 +9,14 @@ import { removeProductStatus } from '../../redux/actions';
 
 type TProps = { products: IProduct[] }
 
-export function Order({ products }: TProps) {
+export const Order: React.FC<TProps> = ({ products }) => {
    function createOrder(): void {
-      if (!validator.validate(email)) {
-         showOrderMessage('Invalid email', 'red')
-         return
-      }
       if (!products.length) {
          showOrderMessage('Order is empty', 'red')
+         return
+      }
+      if (!validator.validate(email)) {
+         showOrderMessage('Invalid email', 'red')
          return
       }
       

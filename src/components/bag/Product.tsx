@@ -8,7 +8,7 @@ import { removeProductStatus, saveProduct } from '../../redux/actions';
 
 type TProps = {product: IProduct}
 
-export function Product({ product }: TProps) {
+export const Product: React.FC<TProps> = ({ product }) => {
    const dispatch = useDispatch()
 
    const { id, title, image, price, label } = product

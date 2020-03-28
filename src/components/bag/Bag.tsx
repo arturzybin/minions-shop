@@ -9,7 +9,7 @@ import { NothingThere } from '../NothingThere';
 import { Order } from './Order';
 
 
-export function Bag() {
+export const Bag: React.FC = () => {
    const dispatch = useDispatch();
    let products: IProduct[] = useSelector((state: IGlobalState) => state.products);
 

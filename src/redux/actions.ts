@@ -16,7 +16,7 @@ export function fetchFirstProducts() {
       dispatch({ type: SHOW_LOADER })
 
       const response = await fetch(process.env.PUBLIC_URL + '/products.json');
-      const products = await response.json()
+      const products: IProduct[] = await response.json()
 
       dispatch({ type: FETCH_PRODUCTS, payload: products })
       dispatch({ type: HIDE_LOADER })
@@ -28,7 +28,7 @@ export function fetchNewProducts(nextId: number) {
       dispatch({ type: SHOW_LOADER })
 
       const response = await fetch(process.env.PUBLIC_URL + '/products.json');
-      const products = await response.json()
+      const products: IProduct[] = await response.json()
       products.forEach((product: IProduct) => {
          product.id = nextId++
       })
@@ -68,8 +68,8 @@ export const removeProductStatus = (id: number) => (
 export const showLoader = () => ({ type: SHOW_LOADER })
 export const hideLoader = () => ({ type: HIDE_LOADER })
 
-type TFilter = 'eyes' | 'clothes' | 'color'
-export const changeFilter = (filter: string, value: string) => ({
+type TFilterName = 'eyes' | 'clothes' | 'color'
+export const changeFilter = (filter: TFilterName, value: string) => ({
    type: CHANGE_FILTER,
    payload: { filter, value }
 })

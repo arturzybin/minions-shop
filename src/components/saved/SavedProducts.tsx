@@ -7,7 +7,7 @@ import { changeActivePage } from '../../redux/actions';
 import { Product } from './Product';
 import { NothingThere } from '../NothingThere';
 
-export function SavedProducts() {
+export const SavedProducts: React.FC = () => {
    const dispatch = useDispatch();
    let products: IProduct[] = useSelector((state: IGlobalState) => state.products);
 

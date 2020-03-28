@@ -14,7 +14,7 @@ const initialState: TState = {
    activePage: 'main'
 }
 
-export const appReducer = (state: TState = initialState, action: TAction) => {
+export const appReducer = (state: TState = initialState, action: TAction): TState => {
    switch (action.type) {
       case CHANGE_ACTIVE_PAGE:
          return {...state, activePage: action.payload}
