@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import { mount } from 'enzyme'
 
 import { Products } from '../Products'
+import { IGlobalState } from '../../../interfaces'
 
 
 const initialState = {
@@ -44,7 +45,7 @@ const initialState = {
          "status": null
       }
    ]
-}
+} as IGlobalState
 
 
 
@@ -131,7 +132,7 @@ describe('Products component should fetch products', () => {
    const mockStore = configureStore([ thunk ])
 
    beforeEach(() => {
-      jest.spyOn(global, 'fetch')
+      jest.spyOn(window, 'fetch')
    })
    afterEach(() => {
       jest.clearAllMocks()
@@ -141,23 +142,23 @@ describe('Products component should fetch products', () => {
       const state = {...initialState}
       state.products = [];
       const store = mockStore(state)
-      const wrap = mount(<Provider store={store}><Products /></Provider>)
-      expect(global.fetch).toHaveBeenCalledTimes(1);
+      mount(<Provider store={store}><Products /></Provider>)
+      expect(window.fetch).toHaveBeenCalledTimes(1);
    })
 
    it('does NOT fetch products if loading', () => {
       const state = {...initialState}
       state.mainPage.isLoading = true;
       const store = mockStore(state)
-      const wrap = mount(<Provider store={store}><Products /></Provider>)
-      expect(global.fetch).toHaveBeenCalledTimes(0);
+      mount(<Provider store={store}><Products /></Provider>)
+      expect(window.fetch).toHaveBeenCalledTimes(0);
    })
 
    it('does NOT fetch products if there already are products', () => {
       const state = {...initialState}
       const store = mockStore(state)
-      const wrap = mount(<Provider store={store}><Products /></Provider>)
-      expect(global.fetch).toHaveBeenCalledTimes(0);
+      mount(<Provider store={store}><Products /></Provider>)
+      expect(window.fetch).toHaveBeenCalledTimes(0);
    })
 
    it('fetches products on load more button click', () => {
@@ -165,6 +166,6 @@ describe('Products component should fetch products', () => {
       const store = mockStore(state)
       const wrap = mount(<Provider store={store}><Products /></Provider>)
       wrap.find('.main-page__load-more-button').simulate('click')
-      expect(global.fetch).toHaveBeenCalledTimes(1);
+      expect(window.fetch).toHaveBeenCalledTimes(1);
    })
 })

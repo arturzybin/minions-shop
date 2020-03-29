@@ -4,8 +4,9 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { mount } from 'enzyme'
 
-import { Bag } from '../Bag'
+import { SavedProducts } from '../SavedProducts'
 import { changeActivePage } from '../../../redux/actions'
+import { IGlobalState } from '../../../interfaces'
 
 const initialState = {
    mainPage: { isLoading: false, filters: {} },
@@ -44,28 +45,28 @@ const initialState = {
          "status": null
       }
    ]
-}
+} as IGlobalState
 
 
-describe('Bag component should render right products count ', () => {
+describe('SavedProducts component should render right products count ', () => {
    const mockStore = configureStore([thunk])
 
 
    it('renders 0 products', () => {
-      const state = { ...initialState }
+      const state = { ...initialState } as IGlobalState
       const store = mockStore(state)
-      const wrap = mount(<Provider store={store}><Bag /></Provider>)
+      const wrap = mount(<Provider store={store}><SavedProducts /></Provider>)
 
-      expect(wrap.find('.bag-product')).toHaveLength(0)
+      expect(wrap.find('.saved-product')).toHaveLength(0)
    })
 
    it('renders 1 product', () => {
-      const state = { ...initialState }
-      state.products[0].status = 'bag'
+      const state = { ...initialState } as IGlobalState
+      state.products[0].status = 'saved'
       const store = mockStore(state)
-      const wrap = mount(<Provider store={store}><Bag /></Provider>)
+      const wrap = mount(<Provider store={store}><SavedProducts /></Provider>)
 
-      expect(wrap.find('.bag-product')).toHaveLength(1)
+      expect(wrap.find('.saved-product')).toHaveLength(1)
 
       initialState.products[0].status = null
    })
@@ -73,23 +74,23 @@ describe('Bag component should render right products count ', () => {
 
 
 
-test('Bag component should change active page', () => {
+test('SavedProducts component should change active page', () => {
    const mockStore = configureStore()
    const store = mockStore(initialState)
    const origDispatch = store.dispatch
    store.dispatch = jest.fn(origDispatch)
-   const wrap = mount(<Provider store={store}><Bag /></Provider>)
+   const wrap = mount(<Provider store={store}><SavedProducts /></Provider>)
 
-   wrap.find('.bag__main-page-button').simulate('click');
+   wrap.find('.saved__main-page-button').simulate('click');
    expect(store.dispatch).toHaveBeenCalledWith(changeActivePage('main'))
 })
 
 
-test('Bag component should render NothingThere if there is no products', () => {
+test('SavedProducts component should render NothingThere if there is no products', () => {
    const mockStore = configureStore()
-   const state = { ...initialState }
+   const state = { ...initialState } as IGlobalState
    const store = mockStore(state)
-   const wrap = mount(<Provider store={store}><Bag /></Provider>)
+   const wrap = mount(<Provider store={store}><SavedProducts /></Provider>)
 
    expect(wrap.find('.nothing-there')).toHaveLength(1)
 })

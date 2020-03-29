@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store'
 import { mount } from 'enzyme'
 
 import { Header } from './Header'
+import { IGlobalState } from '../interfaces'
 
 
 describe('Header should show right saved and bag products count', () => {
@@ -11,7 +12,7 @@ describe('Header should show right saved and bag products count', () => {
 
    
    it('shows 0 saved and 0 bag products', () => {
-      const state = { products: [{ "status": null }, { "status": null }, { "status": null }, { "status": null }] }
+      const state = { products: [{ "status": null }, { "status": null }, { "status": null }, { "status": null }] } as IGlobalState
       const store = mockStore(state)
       const wrap = mount(<Provider store={store}><Header /></Provider>)
 
@@ -21,7 +22,7 @@ describe('Header should show right saved and bag products count', () => {
 
 
    it('shows 2 saved and 2 bag products', () => {
-      const state = { products: [{ "status": 'saved' }, { "status": 'saved' }, { "status": 'bag' }, { "status": 'bag' }] }
+      const state = { products: [{ "status": 'saved' }, { "status": 'saved' }, { "status": 'bag' }, { "status": 'bag' }] } as IGlobalState
       const store = mockStore(state)
       const wrap = mount(<Provider store={store}><Header /></Provider>)
 
@@ -31,7 +32,7 @@ describe('Header should show right saved and bag products count', () => {
 
 
    it('shows 3 saved and 0 bag products', () => {
-      const state = { products: [{ "status": 'saved' }, { "status": 'saved' }, { "status": 'saved' }, { "status": null }] }
+      const state = { products: [{ "status": 'saved' }, { "status": 'saved' }, { "status": 'saved' }, { "status": null }] } as IGlobalState
       const store = mockStore(state)
       const wrap = mount(<Provider store={store}><Header /></Provider>)
 

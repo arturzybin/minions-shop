@@ -4,7 +4,7 @@ import configureStore from 'redux-mock-store'
 import { mount } from 'enzyme'
 
 import { Product } from '../Product'
-import { addProductToBag, saveProduct, removeProductStatus } from '../../../redux/actions'
+import { addProductToBag, removeProductStatus } from '../../../redux/actions'
 
 
 const product = {
@@ -29,8 +29,8 @@ describe('Product changes status on buttons click', () => {
       store.dispatch = jest.fn(origDispatch)
       const wrap = mount(<Provider store={store}><Product product={{...product}} /></Provider>)
 
-      wrap.find('.bag-product__save-button').simulate('click');
-      expect(store.dispatch).toHaveBeenCalledWith(saveProduct(product.id))
+      wrap.find('.saved-product__move-to-bag-button').simulate('click');
+      expect(store.dispatch).toHaveBeenCalledWith(addProductToBag(product.id))
    })
 
    it('removes status', () => {
@@ -39,7 +39,7 @@ describe('Product changes status on buttons click', () => {
       store.dispatch = jest.fn(origDispatch)
       const wrap = mount(<Provider store={store}><Product product={{...product, status: 'saved'}} /></Provider>)
 
-      wrap.find('.bag-product__remove-button').simulate('click');
+      wrap.find('.saved-product__remove-button').simulate('click');
       expect(store.dispatch).toHaveBeenCalledWith(removeProductStatus(product.id))
    })
 })

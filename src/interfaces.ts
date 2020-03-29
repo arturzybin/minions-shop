@@ -18,7 +18,7 @@ export interface IProduct {
    title: string,
    image: string,
    price: number,
-   label: null,
+   label: null | string,
    eyes: string,
    color: string,
    clothes: string,
